@@ -6,6 +6,12 @@
  * Time: 15:53
  */
 
+
+function trade(&$one, &$ano)
+{
+    list($one, $ano) = array($ano, $one);
+}
+
 function bubble_sort(&$array)
 {
     $unsettled_num = count($array);
@@ -16,7 +22,7 @@ function bubble_sort(&$array)
         {
             if($array[$focus] > $array[$focus + 1])
             {
-                list($array[$focus], $array[$focus + 1]) = array($array[$focus + 1], $array[$focus]);
+                trade($array[$focus], $array[$focus + 1]);
             }
         }
         $unsettled_final_No -= 1;
